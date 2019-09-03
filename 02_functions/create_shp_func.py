@@ -2,7 +2,7 @@ from osgeo import ogr,osr
 
 #more on https://pcjericks.github.io/py-gdalogr-cookbook/
 
-shape = r"B:\curso_python_gis\data\shapefile_2.shp"
+shape = r"B:\curso_pygis2_data\shapefile_2.shp"
 
 epsg = 4674
 
@@ -16,7 +16,7 @@ def create_shp(path,epsg,geom_type):
     driver = ogr.GetDriverByName('ESRI Shapefile')
     out_ds = driver.CreateDataSource(path)
     sr = osr.SpatialReference()
-    sr.ImportFromEPSG(epsg) 
+    sr.ImportFromEPSG(epsg)
     layer = out_ds.CreateLayer(path,sr,geom_type=geom_type)
     return out_ds,layer
 
@@ -41,7 +41,8 @@ def create_fields_float(fields,layer,width=31,precision=5):
 def create_polygon(points):
     ring = ogr.Geometry(ogr.wkbLinearRing)
     for point in points:
-        ring.AddPoint(point)
+        print(point)
+        ring.AddPoint(point[0],point[1])
     poly = ogr.Geometry(ogr.wkbPolygon)
     poly.AddGeometry(ring)
     return poly
@@ -67,3 +68,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print('legal')
