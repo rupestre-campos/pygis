@@ -1,5 +1,6 @@
 import Vector
 
+
 v1 = Vector.Vector(r"B:\curso_python_gis\data\shapefile.shp")
 print v1.collumns
 #['name', 'obs', 'x', 'y', 'id', 'count']
