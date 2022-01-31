@@ -1,6 +1,6 @@
 Basic PyGIS course (using  GDAL/OGR python libs)
 
-This training aims to walk you through basic python funcionalities to work with geospatial data and open source lybraries.
+This training aims to walk you through basic python funcionalities to work with geospatial data and open source libraries.
 
 A basic cookbook is in: https://pcjericks.github.io/py-gdalogr-cookbook/
 
